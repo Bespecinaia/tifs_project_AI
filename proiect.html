@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+</head>
+<body text = "white"
+        background= "{{url_for('static', filename='f35.jpg')}}">
+        <br>
+        
+        <h1>Добро пожаловать в ресторан "Гамбринус"</h1><br>
+
+<b><h1>Ваш отзыв о заказе в нашем ресторане!</h1></b>
+<form method="post">
+    <textarea name="text" id="text" cols="45" rows="20"></textarea>
+    <input type="submit">
+    {% if request.args.get("pred")%}
+    <h1>{{request.args.get("pred")}}</h1>
+    {% endif%}
+   
+  <h2>Благодарим за отзыв!</h2>  
+</form>
+</body>
+</html>
